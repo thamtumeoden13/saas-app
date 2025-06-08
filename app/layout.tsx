@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -19,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bricolage.variable} antialiased`}>{children}</body>
+      <body className={`${bricolage.variable} antialiased`}>
+        <ClerkProvider appearance={{ variables: { colorPrimary: "#fe5933" } }}>
+          {children}
+        </ClerkProvider>
+      </body>
     </html>
   );
 }

@@ -12,6 +12,8 @@ const Page = async () => {
   const companions = await getAllCompanions({ limit: 3 });
   const recentSessionsCompanions = await getRecentSessions(10);
 
+  console.log("companions[0]",companions[0])
+
   return (
     <div className="flex flex-col gap-8 max-sm:px-2">
       <h1 className="text-2xl underline">Popular Companions</h1>
